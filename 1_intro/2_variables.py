@@ -1,0 +1,10 @@
+a=1
+print("a=",a,"      ",type(a))
+b="Harry"
+print("b=",b,"  ",type(b))
+c=None
+print("c=",c,"   ",type(c))
+d=True
+print("d=",d,"   ",type(d))
+e=complex(4,5)
+print("e=",e," ",type(e))

@@ -1,0 +1,74 @@
+def greater(c,d):
+    if(c>d):
+        print("first element greater than second")
+    else:
+        print("second element greater than first")
+def gmean(c,d):
+    mean=(c+d)/2
+    print("mean of 2 no's : ",mean)
+
+#just declaring a function
+def add(a,b):
+    pass
+a=10
+b=20
+greater(a,b)
+gmean(a,b)
+
+#default function
+def avg(a=1,b=2):
+    print("avg of 2 no's : ",(a+b)/2)
+
+avg(a,b)
+avg()
+
+avg(5,5)
+#keyword argument
+avg(b=10,a=100)  #specifying key also like a b
+
+#reqd arguments
+def avg(a,b):
+    print("avg")
+
+#avg(10) #error 
+
+'''
+variable lenght arg
+
+when we have to pass many arg we can use this
+*var_name use to pass tuple
+**var_name used to pass dictionary
+'''
+
+# def printer(*arg):
+#     print(type(arg))
+#     print("hello",arg[0],arg[1])
+# printer("sachin","goyal","BTech","Coe")
+
+#better to use for loop 
+def printer(*arg):
+    for i in arg:
+        print(i)
+printer("sachin","goyal","BTech","Coe")
+
+def printer(**arg):
+    print(type(arg))
+    # print("hello",arg["fname"],arg["mname"],arg["lname"])  
+    for i in arg:
+        print(i,arg[i])
+
+
+printer(fname="sachin",mname="",lname="goyal")
+
+
+#return 
+def avg(*arr):
+    sum=0
+    for i in arr:
+        sum+=i
+    #return sum
+    return sum/len(arr)
+c=(1,2,3,4,5,10)
+#k=avg(c)  error as it passes whole tupple as a packed single argument and sum will produce error
+k=avg(*c)  #here unpacked tupple will be sended i.e. each element of tuple is treated as individual argument
+print(k)
